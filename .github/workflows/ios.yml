@@ -39,13 +39,13 @@ jobs:
       - name: Initialize keychain
         run: keychain initialize
 
-      - name: Set up Provisioning Profile
-        run: |
-          PROFILES_HOME="$HOME/Library/MobileDevice/Provisioning Profiles"
-          mkdir -p "$PROFILES_HOME"
-          PROFILE_PATH="$(mktemp "$PROFILES_HOME"/$(uuidgen).mobileprovision)"
-          echo ${PROVISIONING_PROFILE} | base64 --decode > "$PROFILE_PATH"
-          echo "Saved provisioning profile $PROFILE_PATH"   
+      #- name: Set up Provisioning Profile
+      #  run: |
+      #    PROFILES_HOME="$HOME/Library/MobileDevice/Provisioning Profiles"
+      #    mkdir -p "$PROFILES_HOME"
+      #    PROFILE_PATH="$(mktemp "$PROFILES_HOME"/$(uuidgen).mobileprovision)"
+      #    echo ${PROVISIONING_PROFILE} | base64 --decode > "$PROFILE_PATH"
+      #    echo "Saved provisioning profile $PROFILE_PATH"   
 
       - name: Set up Distribution Certificate
         run: |
